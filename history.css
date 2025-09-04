@@ -164,3 +164,19 @@ body::-webkit-scrollbar {
   border: none;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .discover {
+    padding: 60px 15px;
+  }
+  .discover-box {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .discover-box {
+    padding: 20px 15px;
+  }
+}
+
