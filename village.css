@@ -198,4 +198,45 @@ body::-webkit-scrollbar {
   .district .barangay-card {
     width: auto;
   }
+
+}
+
+@media (max-width: 1024px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: rgba(0,0,0,0.8);
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .villages {
+    padding-top: 100px;
+  }
+  .district h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .district h2 {
+    font-size: 1.3rem;
+  }
+  .barangay-card img {
+    height: 120px;
+  }
 }
