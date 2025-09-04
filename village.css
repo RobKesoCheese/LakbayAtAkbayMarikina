@@ -67,11 +67,9 @@ body::-webkit-scrollbar {
   opacity: 0.8;
 }
 
-/* ===== Logo ===== */
 .logo {
   display: flex;
   align-items: center;
-  background-color: #1D1912;
   padding: 10px 20px;
   border-radius: 10px;
   max-width: fit-content;
@@ -83,7 +81,24 @@ body::-webkit-scrollbar {
   transition: transform 0.3s ease;
 }
 
-/* ===== Mobile Hamburger Menu ===== */
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu a {
+  color: #F3F3E6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.nav-menu a:hover {
+  opacity: 0.8;
+}
+
+/* ===== Hamburger ===== */
 .hamburger {
   display: none;
   font-size: 30px;
@@ -98,15 +113,9 @@ body::-webkit-scrollbar {
   transform: scale(0.95);
 }
 
-.nav-menu ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
 /* ===== Villages Section ===== */
 .villages {
-  padding: 120px 20px 50px; /* push content below navbar */
+  padding: 120px 20px 50px; /* space for fixed navbar */
 }
 
 .district {
@@ -121,6 +130,12 @@ body::-webkit-scrollbar {
 }
 
 /* Barangay Cards */
+.barangay-grid {
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+}
+
 .barangay-card {
   position: relative;
   width: 220px;
@@ -130,19 +145,18 @@ body::-webkit-scrollbar {
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-  margin: 0 auto;
 }
 
 .barangay-card img {
   width: 100%;
-  height: auto; /* responsive height */
+  height: auto; /* Let the height adjust automatically */
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
-  border-radius: 6px;
+  border-radius: 6px; /* optional: smooth edges */
 }
 
-/* Overlay text (hidden by default) */
+
 .barangay-card .overlay {
   position: absolute;
   inset: 0;
@@ -158,99 +172,51 @@ body::-webkit-scrollbar {
   text-align: center;
 }
 
-/* Barangay name below image */
 .barangay-card p {
   padding: 10px;
   font-size: 1rem;
-  color: #F3F3E6;
 }
 
-/* Hover / Zoom effect */
 .barangay-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.5);
 }
-
 .barangay-card:hover img {
   transform: scale(1.1);
 }
-
 .barangay-card:hover .overlay {
   opacity: 1;
 }
 
-/* ===== District 1: 5 top, 4 centered below ===== */
+/* District Grids */
 .district:nth-of-type(1) .barangay-grid {
-  display: grid;
   grid-template-columns: repeat(5, 220px);
-  gap: 20px;
-  justify-content: center;
 }
 
-/* ===== District 2: 4 top, 3 centered below ===== */
 .district:nth-of-type(2) .barangay-grid {
-  display: grid;
   grid-template-columns: repeat(4, 220px);
-  gap: 20px;
-  justify-content: center;
 }
 
 /* ===== Responsive ===== */
 @media screen and (max-width: 1200px) {
   .district .barangay-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-  .district .barangay-card {
-    width: 100%;
-  }
-}
-
-@media (max-width: 1024px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-menu ul {
-    display: none;
-    flex-direction: column;
-    gap: 15px;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background: rgba(0,0,0,0.8);
-    padding: 15px;
-    border-radius: 8px;
-  }
-
-  .nav-menu.show ul {
-    display: flex;
-  }
-}
-
-@media (max-width: 768px) {
-  .villages {
-    padding-top: 100px;
-  }
-
-  .district h2 {
-    font-size: 1.5rem;
-  }
-
   .barangay-card {
-    width: 90%;
+    width: auto;
   }
 }
 
-/* Hamburger Menu */
+@media screen and (max-width: 1024px) {
   .hamburger {
     display: block;
   }
   .nav-menu {
-    width: 100%;
     position: absolute;
     top: 100%;
-    left: 0;
-    background: rgba(0, 0, 0, 0.9);
+    right: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
     display: none;
     flex-direction: column;
     padding: 15px 0;
@@ -268,22 +234,21 @@ body::-webkit-scrollbar {
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .district h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
-
-  .barangay-card img {
-    height: auto; /* keep it responsive */
+  .barangay-card {
+    width: 90%; /* almost full width on small screens */
+    margin: 0 auto; /* center the cards */
   }
 }
 
-.navbar {
-    padding: 15px 20px;
+@media screen and (max-width: 480px) {
+  .district h2 {
+    font-size: 1.3rem;
   }
-  .logo-icon {
-    height: 50px;
+  .barangay-card img {
+    height: 120px;
   }
-
-
-
+}
