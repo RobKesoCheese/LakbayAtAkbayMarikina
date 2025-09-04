@@ -3,16 +3,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-width: 100%;
 }
 
 html, body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  scroll-behavior: smooth;
   font-family: "Georgia", serif;
   line-height: 1.5;
+  scroll-behavior: smooth;
   background-color: #2E2E2E;
   color: #F3F3E6;
 }
@@ -21,14 +20,13 @@ html, body {
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
-  width: 0;
-  height: 0;
 }
 
 /* ===== Navbar ===== */
 .navbar {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   padding: 15px 30px;
   display: flex;
@@ -44,45 +42,38 @@ body::-webkit-scrollbar {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-.navbar .logo {
-  background-color: transparent;
-  padding: 5px 10px;
-  border-radius: 6px;
-  font-weight: bold;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.navbar a {
-  color: #F3F3E6;
-  text-decoration: none;
-  font-weight: 500;
-  transition: opacity 0.3s ease;
-}
-.navbar a:hover {
-  opacity: 0.8;
-}
-
-/* ===== Logo ===== */
 .logo {
   display: flex;
   align-items: center;
   background-color: #1D1912;
   padding: 10px 20px;
   border-radius: 10px;
-  max-width: fit-content;
 }
+
 .logo-icon {
   height: 60px;
   width: auto;
   transition: transform 0.3s ease;
 }
 
-/* ===== Mobile Menu ===== */
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu a {
+  color: #F3F3E6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.nav-menu a:hover {
+  opacity: 0.8;
+}
+
+/* ===== Hamburger ===== */
 .hamburger {
   display: none;
   font-size: 30px;
@@ -92,19 +83,14 @@ body::-webkit-scrollbar {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
+
 .hamburger:active {
   transform: scale(0.95);
 }
 
-.nav-menu ul {
-  background: transparent;
-  list-style: none;
-  gap: 20px;
-}
-
 /* ===== Villages Section ===== */
 .villages {
-  padding: 100px 20px 50px; /* push content below navbar */
+  padding: 120px 20px 50px; /* space for fixed navbar */
 }
 
 .district {
@@ -119,6 +105,12 @@ body::-webkit-scrollbar {
 }
 
 /* Barangay Cards */
+.barangay-grid {
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+}
+
 .barangay-card {
   position: relative;
   width: 220px;
@@ -134,11 +126,9 @@ body::-webkit-scrollbar {
   width: 100%;
   height: 140px;
   object-fit: cover;
-  display: block;
   transition: transform 0.4s ease;
 }
 
-/* Overlay text (hidden by default) */
 .barangay-card .overlay {
   position: absolute;
   inset: 0;
@@ -154,17 +144,14 @@ body::-webkit-scrollbar {
   text-align: center;
 }
 
-/* Barangay name below image */
 .barangay-card p {
   padding: 10px;
   font-size: 1rem;
-  color: #F3F3E6;
 }
 
-/* Hover / Zoom effect */
 .barangay-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.5);
 }
 .barangay-card:hover img {
   transform: scale(1.1);
@@ -173,21 +160,13 @@ body::-webkit-scrollbar {
   opacity: 1;
 }
 
-/* ===== District 1: 5 top, 4 centered below ===== */
+/* District Grids */
 .district:nth-of-type(1) .barangay-grid {
-  display: grid;
   grid-template-columns: repeat(5, 220px);
-  gap: 20px;
-  justify-content: center;
 }
 
-
-/* ===== District 2: 4 top, 3 centered below ===== */
 .district:nth-of-type(2) .barangay-grid {
-  display: grid;
   grid-template-columns: repeat(4, 220px);
-  gap: 20px;
-  justify-content: center;
 }
 
 /* ===== Responsive ===== */
@@ -195,44 +174,45 @@ body::-webkit-scrollbar {
   .district .barangay-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-  .district .barangay-card {
+  .barangay-card {
     width: auto;
   }
-
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .hamburger {
     display: block;
   }
-
-  .navbar ul {
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
     display: none;
     flex-direction: column;
-    gap: 15px;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background: rgba(0,0,0,0.8);
-    padding: 15px;
-    border-radius: 8px;
+    padding: 15px 0;
   }
-
-  .navbar ul.active {
+  .nav-menu.show {
     display: flex;
+  }
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  .nav-menu ul li {
+    text-align: center;
+    padding: 12px 0;
   }
 }
 
-@media (max-width: 768px) {
-  .villages {
-    padding-top: 100px;
-  }
+@media screen and (max-width: 768px) {
   .district h2 {
     font-size: 1.5rem;
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .district h2 {
     font-size: 1.3rem;
   }
