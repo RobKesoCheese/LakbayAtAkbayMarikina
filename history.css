@@ -1,3 +1,4 @@
+/* ===== Global Reset ===== */
 * {
   margin: 0;
   padding: 0;
@@ -5,45 +6,36 @@
   max-width: 100%;
 }
 
-html {
+html, body {
   width: 100%;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
   height: 100%;
   overflow-x: hidden;
-}
-
-body {
+  scroll-behavior: smooth;
   font-family: "Georgia", serif;
-  color: #F3F3E6;  
-  background-color: #2E2E2E;
-  width: 100%;
-  position: relative;
-  overflow-x: hidden;
   line-height: 1.5;
-  padding-top: 30px; /* adjust based on navbar height */
+  background-color: #2E2E2E;
+  color: #F3F3E6;
 }
 
-/* ========== Scrollbar Styling ========== */
+/* ===== Hide Scrollbar ===== */
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
-  display: none; /* Hide scrollbar */
+  display: none;
   width: 0;
   height: 0;
 }
 
-/* ========== Navbar Section ========== */
+/* ===== Navbar ===== */
 .navbar {
-  backdrop-filter: blur(5px);
-  background: rgba(0, 0, 0, 0.6);
   position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 15px 30px;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1000;
   transition: background-color 0.3s ease;
 }
@@ -71,13 +63,11 @@ body::-webkit-scrollbar {
   font-weight: 500;
   transition: opacity 0.3s ease;
 }
-
 .navbar a:hover {
   opacity: 0.8;
 }
 
-/* ========== Logo Section ========== */
-
+/* ===== Logo ===== */
 .logo {
   display: flex;
   align-items: center;
@@ -86,14 +76,13 @@ body::-webkit-scrollbar {
   border-radius: 10px;
   max-width: fit-content;
 }
-
 .logo-icon {
   height: 60px;
   width: auto;
   transition: transform 0.3s ease;
 }
 
-/* ========== Mobile Menu Section ========== */
+/* ===== Mobile Menu ===== */
 .hamburger {
   display: none;
   font-size: 30px;
@@ -103,15 +92,8 @@ body::-webkit-scrollbar {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-
 .hamburger:active {
   transform: scale(0.95);
-}
-
-.nav-menu ul {
-  background-color: transparent;
-  list-style: none;
-  gap: 20px;
 }
 
 .discover {
@@ -179,4 +161,5 @@ body::-webkit-scrollbar {
     padding: 20px 15px;
   }
 }
+
 
