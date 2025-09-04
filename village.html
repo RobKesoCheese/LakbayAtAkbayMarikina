@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lakbay Marikenyo</title>
+  <link rel="stylesheet" href="village.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Lakbay Logo" class="logo-icon" />
+    </div>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <nav class="nav-menu" id="nav-menu">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="#info">ABOUT</a></li>
+        <li><a href="village.html">VILLAGES</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="villages">
+  <!-- District 1 -->
+  <section class="district">
+    <h2>District 1</h2>
+    <div class="barangay-grid">
+      <div class="barangay-card">
+        <img src="barangay1.jpg" alt="Sto. Niño">
+        <div class="overlay">Central barangay with Marikina’s main church and civic landmarks.</div>
+        <p>Sto. Niño</p>
+      </div>
+      <div class="barangay-card">
+        <img src="barangay2.jpg" alt="Malanday">
+        <div class="overlay">A historic barangay known for community traditions.</div>
+        <p>Malanday</p>
+      </div>
+      <div class="barangay-card">
+        <img src="barangay3.jpg" alt="Barangka">
+        <div class="overlay">Residential and commercial mix with key access roads.</div>
+        <p>Barangka</p>
+      </div>
+      <div class="barangay-card">
+        <img src="barangay4.jpg" alt="San Roque">
+        <div class="overlay">A lively barangay near the Marikina Riverbanks area.</div>
+        <p>San Roque</p>
+      </div>
+      <div class="barangay-card">
+        <img src="barangay5.jpg" alt="Jesus Dela Peña">
+        <div class="overlay">One of the oldest settlements, with cultural and historical roots.</div>
+        <p>Jesus Dela Peña</p>
+      </div>
+      <div class="barangay-card">
+        <img src="barangay6.jpg" alt="Tañong">
+        <div class="overlay">Home to schools and small businesses, close to city center.</div>
+        <p>Tañong</p>
+      </div>
+      <div class="barangay-card">
+        <img src="barangay7.jpg" alt="Kalumpang">
+        <div class="overlay">Known for residential communities and schools.</div>
+        <p>Kalumpang</p>
+      </div>
+      <div class="barangay-card">
+        <img src="barangay8.jpg" alt="Industrial Valley Complex">
+        <div class="overlay">Barangay with industrial areas and riverside residences.</div>
+        <p>Industrial Valley Complex</p>
+      </div>
+      <div class="barangay-card">
+        <img src="barangay9.jpg" alt="Sta. Elena">
+        <div class="overlay">Historic barangay near Marikina’s old center.</div>
+        <p>Sta. Elena</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- District 2 -->
+  <section class="district">
+    <h2>District 2</h2>
+    <div class="barangay-grid">
+      <div class="barangay-card">
+        <img src="barangay10.jpg" alt="Concepcion Uno">
+        <div class="overlay">Large residential barangay with schools and marketplaces.</div>
+        <p>Concepcion Uno</p>
+      </div>
+      <div class="barangay-card">
+        <img src="barangay11.jpg" alt="Tumana">
+        <div class="overlay">Located by the Marikina River, known for its local communities.</div>
+        <p>Tumana</p>
+      </div>
+      <div class="barangay-card">
+        <img src="barangay12.jpg" alt="Concepcion Dos">
+        <div class="overlay">Primarily residential with growing commercial spaces.</div>
+        <p>Concepcion Dos</p>
+      </div>
+      <div class="barangay-card">
+        <img src="barangay13.jpg" alt="Marikina Heights">
+        <div class="overlay">Upland barangay offering residential subdivisions and schools.</div>
+        <p>Marikina Heights</p>
+      </div>
+      <div class="barangay-card">
+        <img src="barangay14.jpg" alt="Nangka">
+        <div class="overlay">One of the largest barangays with diverse communities.</div>
+        <p>Nangka</p>
+      </div>
+      <div class="barangay-card">
+        <img src="barangay15.jpg" alt="Parang">
+        <div class="overlay">Mix of residential areas and local businesses.</div>
+        <p>Parang</p>
+      </div>
+      <div class="barangay-card">
+        <img src="barangay16.jpg" alt="Fortune">
+        <div class="overlay">Eastern barangay with subdivisions and local markets.</div>
+        <p>Fortune</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+  <!-- Modal Popup -->
+  <div id="barangay-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-description"></p>
+    </div>
+  </div>
+
+  <script src="village.js" ></script>
+</body>
+</html>

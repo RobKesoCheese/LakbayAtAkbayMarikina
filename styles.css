@@ -1,0 +1,400 @@
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Georgia", serif;
+  line-height: 1.5;
+  background-color: #2E2E2E;
+  color: #F3F3E6;
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px; /* avoids content hiding under navbar */
+}
+
+/* ===== Hide Scrollbar ===== */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar.transparent {
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.navbar .logo {
+  background-color: transparent;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  color: #F3F3E6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+.navbar a:hover {
+  opacity: 0.8;
+}
+
+/* ===== Logo ===== */
+.logo {
+  display: flex;
+  align-items: center;
+  background-color: #1D1912;
+  padding: 10px 20px;
+  border-radius: 10px;
+  max-width: fit-content;
+}
+.logo-icon {
+  height: 60px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+/* ===== Mobile Menu ===== */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: #F3F3E6;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.hamburger:active {
+  transform: scale(0.95);
+}
+
+.nav-menu ul {
+  list-style: none;
+  gap: 20px;
+}
+
+/* ===== Front Section ===== */
+.front {
+  position: relative;
+  background: url("marikenyobutbetter.jpg") center/cover no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.front .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.overlay h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.front .description {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  margin-bottom: 25px;
+  max-width: 600px;
+}
+
+/* ===== Buttons ===== */
+.btnexplore, .btndiscover {
+  background-color: #F1E2AD;
+  color: black;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btndiscover {
+  margin-top: 15px;
+}
+
+.btnexplore:hover, 
+.btndiscover:hover {
+  background-color: #6B2D2D;
+  color: #F3F3E6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== About and Legacy Section ===== */
+.about {
+  min-height: 100vh;              /* fills the screen */
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 80px 10%;
+  gap: 40px;
+  border-top: #F1E2AD 2px solid;
+  border-bottom: #F1E2AD 2px solid;
+}
+
+.about-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;  /* stack about + legacy */
+  gap: 20px;               /* small spacing between them */
+}
+
+.about-text {
+  padding-right: 30px;
+}
+
+.legacy-text {
+  margin-top: 50px;           /* remove extra spacing */
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: clamp(2rem, 3vw, 1.5rem);
+  color: #F3F3E6;
+}
+
+p {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  line-height: 1.6;
+  color: #F3F3E6;
+}
+
+.about-img {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-left: 200px;   /* moves image to the right */
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.legacy-text p {
+  margin-bottom: 10px;
+}
+
+/* ===== Marikina Section ===== */
+#marikina {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 10%;
+  margin-top: 20px;
+}
+
+.mrkn h1 {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0 auto 1ch;
+  line-height: 1.2;
+}
+
+/* ===== Place Section ===== */
+.place {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns */
+  gap: 30px;
+  padding: 60px 10%;
+  align-items: center;
+}
+
+.place-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  border: #F1E2AD 2px solid;
+}
+
+.place-text {
+  text-align: center;
+}
+
+.place-text h2 {
+  color: #F1E2AD;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.place-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.place-map {
+  text-align: right;
+}
+
+.place-map h3 {
+  margin-bottom: 10px;
+  color: #F1E2AD;
+}
+
+.place-map a {
+  color: #F1E2AD;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.place-map a:hover {
+  color: #6B2D2D;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 900px) {
+  .place {
+    grid-template-columns: 1fr; /* stack on small screens */
+    text-align: center;
+  }
+
+  .place-map {
+    text-align: center;
+  }
+}
+
+
+/* ===== Media Queries ===== */
+@media screen and (max-width: 1024px) {
+  .about-img img {
+    width: 250px;
+  }
+  .about {
+    padding: 50px 8%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    padding: 40px 5%;
+  }
+  .about-text, .legacy-text {
+    width: 100%;
+    padding-right: 0;
+  }
+  .about-img {
+    justify-content: flex-start;
+  }
+  .about-img img {
+    width: 200px;
+  }
+
+  /* Mobile Menu */
+  .hamburger {
+    display: block;
+    margin-left: auto;
+  }
+  .nav-menu ul {
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    width: 100%;
+    padding: 15px 0;
+    position: absolute;
+    left: 0;
+    top: 100%;
+  }
+  .nav-menu.show ul {
+    display: flex;
+  }
+  .nav-menu ul li {
+    text-align: center;
+    padding: 12px 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-img img {
+    width: 80%;
+  }
+  .about-img {
+    justify-content: center;
+    margin: 25px 0;
+  }
+  .front .overlay {
+    padding: 150px 20px;
+  }
+  .front h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  .front .description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  .btndiscover, .btnexplore {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  .about, .legacy {
+    padding: 30px 15px;
+  }
+  .navbar {
+    padding: 15px 20px;
+  }
+  .logo-icon {
+    height: 50px;
+  }
+  #marikina {
+    padding: 0 5%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .front h1, .heartshoe h1 {
+    font-size: 1.8rem;
+  }
+  .btndiscover, .btnexplore {
+    padding: 8px 16px;
+  }
+}
