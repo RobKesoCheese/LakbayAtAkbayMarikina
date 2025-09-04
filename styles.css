@@ -227,7 +227,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 0 10%;
+  padding: 80px 10%;
   margin-top: 20px;
 }
 
@@ -387,3 +387,4 @@ p {
     padding: 8px 16px;
   }
 }
+
