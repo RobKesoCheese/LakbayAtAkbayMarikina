@@ -1,7 +1,5 @@
-// Toggle hamburger menu
 function toggleMenu() {
-  const menu = document.getElementById("nav-menu");
-  menu.classList.toggle("show");
+  document.getElementById("nav-menu").classList.toggle("show");
 }
 
 // Navbar scroll effect
@@ -14,12 +12,12 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Close menu when clicking a link (mobile)
+// Close menu when clicking a link
 document.querySelectorAll('.nav-menu a').forEach(link => {
   link.addEventListener('click', () => {
-    const menu = document.getElementById('nav-menu');
-    if (menu.classList.contains('show')) {
-      menu.classList.remove('show');
+    const navMenu = document.getElementById('nav-menu');
+    if (navMenu.classList.contains('show')) {
+      navMenu.classList.remove('show');
     }
   });
 });
